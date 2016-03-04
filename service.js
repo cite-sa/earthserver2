@@ -22,7 +22,7 @@ $(function () {
 
             var gisToolbar = $("<div>").gisToolbar({container: this.element}).gisToolbar("instance");
             gisToolbar.addClickHandler("#zoom-in-tool", function() {console.log("Zoom in.")});
-            var coordinates = $("<div>").coordinateInfo({container: this.element}).coordinateInfo("instance");
+            var coordinates = $("<div>").coordinateOverlay({container: this.element}).coordinateOverlay("instance");
         }
     })
 });
