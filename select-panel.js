@@ -53,7 +53,9 @@ $(function () {
                     buttonContent.empty();
                     buttonContent.append($(this).text());
 
-                    callback($(this));
+                    if (callback != undefined) {
+                        callback($(this));
+                    }
                 })).appendTo(this.panelBody.find(".dropdown-menu"));
 
             return this;

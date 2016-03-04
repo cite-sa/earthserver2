@@ -351,6 +351,7 @@ body {
     height: 9em;
     width: 100%;
     resize: none;
+    color: #000000;
 }
 
 #service-container #gis-toolbar {
