@@ -285,8 +285,9 @@ $(function () {
 
             return this;
         },
-        addSelectOption: function (optionId, optionContent, callback) {
+        addSelectOption: function (optionId, optionContent) {
             var self = this;
+            var id;
             $("<li>").append(
                 $("<a>", {href: "#" + optionId})
                     .append(optionContent)
@@ -294,9 +295,6 @@ $(function () {
                         var buttonContent = self.panelBody.find(".selector-btn-content");
                         buttonContent.empty();
                         buttonContent.append($(this).text());
-                        if (callback != undefined) {
-                            callback($(this));
-                        }
                     })).appendTo(this.panelBody.find(".dropdown-menu"));
 
             return this;

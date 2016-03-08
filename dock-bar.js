@@ -1,7 +1,7 @@
 $(function () {
     $.widget("earthserver.dock", {
         options: {
-            container: undefined,
+            container: $("#service-container"),
             position: "",
             toggleIcon: undefined
         },
@@ -93,11 +93,10 @@ $(function () {
             this.dockToggle.css({"margin-top": (rightDocks.length * 40) + "px"});
         },
         addEmptyPanel: function (panelId) {
-            return $("<div>").tabPanel({
+            return $("<div>").panel({
                 dock: this.dock,
-                panelId: panelId,
-                panelType: "tab"
-            }).tabPanel("instance");
+                panelId: panelId
+            }).panel("instance");
         }
     })
 });

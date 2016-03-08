@@ -1,7 +1,7 @@
 $(function () {
     $.widget("earthserver.gisToolbar", {
         options: {
-            container: undefined
+            container: $("#service-container")
         },
         _create: function () {
             this.element.attr({id: "gis-toolbar"})
@@ -26,9 +26,6 @@ $(function () {
                     "title": "Zoom Out"
                 }).append(
                         $("<img>", {class: "gis-icon", src: "images/icons/zoom_out(h100)w.png"})
-                            .click(function () {
-                                console.log("Zooming out");
-                            })
                     )
             ).append(
                 $("<div>", {
@@ -40,9 +37,6 @@ $(function () {
                     "title": "Fit to Screen"
                 }).append(
                         $("<img>", {class: "gis-icon", src: "images/icons/fit_to_screen(h100)w.png"})
-                            .click(function () {
-                                console.log("Zooming in");
-                            })
                     )
             ).append(
                 $("<div>", {
@@ -54,9 +48,6 @@ $(function () {
                     "title": "Select"
                 }).append(
                         $("<img>", {class: "gis-icon", src: "images/icons/select(h100)w.png"})
-                            .click(function () {
-                                console.log("Zooming in");
-                            })
                     )
             ).append(
                 $("<div>", {
@@ -68,9 +59,6 @@ $(function () {
                     "title": "Pan"
                 }).append(
                         $("<img>", {class: "gis-icon", src: "images/icons/pan(h100)w.png"})
-                            .click(function () {
-                                console.log("Zooming in");
-                            })
                     )
             ).appendTo(this.options.container);
 
@@ -85,7 +73,7 @@ $(function () {
                     callback()
                 });
         },
-        addTool: function (icon, title, callback) {
+        addTool: function (icon, title) {
             this.element.append(
                 $("<div>", {
                     class: "gis-icon-container",
@@ -95,9 +83,6 @@ $(function () {
                     "title": title
                 }).append(
                     $("<img>", {class: "gis-icon", src: icon})
-                        .click(function () {
-                            callback();
-                        })
                 )
             );
         }

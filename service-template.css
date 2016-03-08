@@ -245,6 +245,7 @@ body {
 .dock .panel > .panel-body > .panel-btn-container > .panel-btn:hover,
 .dock .panel > .panel-body > .panel-btn-container > .panel-btn:active,
 .dock .panel > .panel-body > .panel-btn-container > .panel-btn:focus {
+    outline: none;
     background-color: #2F5597;
 }
 
@@ -397,6 +398,7 @@ body {
     background-color: rgb(32, 56, 100);
     margin: 0em 0.3em;
     border-radius: 15px 15px 0px 0px;
+    width: 6.8em;
 }
 
 #coordinate-overlay > .coordinate-container > .coordinate-icon {

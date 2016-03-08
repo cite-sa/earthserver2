@@ -10,12 +10,16 @@ $(function () {
             this.dockToggle.append(
                 $("<img>", {class: "dock-toggle-icon", src: this.options.toggleIcon})
             );
+            this.infoPanel = this.addInfoPanel();
         },
         addInfoPanel: function() {
             return $("<div>").tabPanel({
                 dock: this.dock,
-                panelId: "docs-panel"
+                panelId: "info-panel"
             }).tabPanel("instance");
+        },
+        getInfoPanel: function() {
+            return this.infoPanel;
         }
     })
 });

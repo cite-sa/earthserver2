@@ -20,15 +20,20 @@ $(function () {
             this.panel = panel.panel;
             this.panelBody = panel.panelBody;
         },
-        addButton: function(buttonContent) {
+        addButton: function(buttonContent, buttonCallback) {
             var buttonContainer = this.panelBody.find(".panel-btn-container");
             if (buttonContainer.length == 0) {
                 buttonContainer = $("<div>", {class: "panel-btn-container"})
                     .appendTo(this.panelBody);
             }
-            $("<button>", {class: "btn btn-default panel-btn"})
+            var button = $("<button>", {class: "btn btn-default panel-btn"})
                 .append(buttonContent)
                 .appendTo(buttonContainer);
+            if (buttonCallback != undefined) {
+                button.click(function() {
+                    buttonCallback();
+                });
+            }
 
             return this;
         },
