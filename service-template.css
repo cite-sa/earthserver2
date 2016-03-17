@@ -167,6 +167,11 @@ body {
     /*padding-right: 0px;*/
 }
 
+#service-container .right-dock.plot-dock {
+    width: 35%;
+    right: -35%;
+}
+
 #service-container .right-dock .right-dock-toggle {
     /*width: 2em;
     height: 2em;*/
