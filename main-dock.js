@@ -11,7 +11,7 @@ $(function () {
             the projections, the coverages and the query terminal panels */
         _create: function () {
             this._super();
-            this.dockToggle
+            this.dockToggleIconWrapper
                 .append(
                     $("<span>", {class: this.options.toggleIcon + " dock-toggle-icon"})
                 );

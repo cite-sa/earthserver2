@@ -5,9 +5,9 @@ $(function () {
             toggleIcon: "images/icons/diagram(h100).png"
         },
         _create: function () {
-            this._super();
             this.element.addClass("plot-dock");
-            this.dockToggle.append(
+            this._super();
+            this.dockToggleIconWrapper.append(
                 $("<img>", {class: "dock-toggle-icon", src: this.options.toggleIcon})
             );
             this.plotPanel = this.addEmptyPanel();

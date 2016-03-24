@@ -6,20 +6,7 @@ $(function () {
 
             /* main dock (required) */
             var leftDock = $("<div>").mainDock().mainDock("instance");
-            /*leftDock.addQueryTerinalPanel().addQueryTerminalPanel().addQueryTerminalPanel().addQueryTerminalPanel();*/
-
-            /*leftDock
-                .addProjectionSelectPanel(function(elemClicked) {
-                    console.log(elemClicked.text())
-                })
-                .addAvailableCoveragesPanel(function() {
-                    $("#coverage-selector").find("#coverageDropdown")
-                    console.log("Retrieve button clicked");
-                })
-                .addQueryTerminalPanel().addQueryTerminalPanel().addQueryTerminalPanel().addQueryTerminalPanel().addQueryTerminalPanel().addQueryTerminalPanel().addQueryTerminalPanel();*/
-
-            var exampleRightDock = $("<div>").secondaryDock().secondaryDock("instance");
-            exampleRightDock.addEmptyPanel();
+            $("<div>").plotDock().plotDock("instance");
 
             /* info dock (required) */
             var infoDock = $("<div>").infoDock().infoDock("instance");
@@ -30,7 +17,10 @@ $(function () {
 
             /* gis toolbar (required) */
             var gisToolbar = $("<div>").gisToolbar().gisToolbar("instance");
-            gisToolbar.addClickHandler("#zoom-in-tool", function() {console.log("Zoom in.")});
+            gisToolbar.addClickHandler("#zoom-in-tool", function() {
+                /*console.log("Zoom in.")*/
+                infoDock.open();
+            });
             /* coordinates overlay (required) */
             var coordinates = $("<div>").coordinateOverlay().coordinateOverlay("instance");
         }

@@ -46,17 +46,17 @@ $(function () {
 
             this.dockToggle = $("<div>", {class: "dock-toggle "
                 + this.options.position + "-dock-toggle"})
-                /*.append($("<img>", {src: this.options.toggleIcon, class: "dock-toggle-icon"}))*/
                 .click(function () {
+                    $(".right-dock-toggle").addClass("bring-on-top");
                     if (self.options.position == "left") {
-                        if ($(this).hasClass("open")) {
+                        if (self.dock.hasClass("open")) {
                             self.dock.position({
                                 my: "right top",
                                 at: "left+40 top+70",
                                 of: "#service-container"
                             });
 
-                            $(this).removeClass("open");
+                            /*$(this).removeClass("open");*/
                             self.dock.removeClass("open");
                             self.dock.addClass("extra-right-padding");
                         } else {
@@ -65,32 +65,71 @@ $(function () {
                                 at: "left top+70",
                                 of: "#service-container"
                             });
-                            $(this).addClass("open");
+                            /*$(this).addClass("open");*/
                             self.dock.addClass("open");
                             self.dock.removeClass("extra-right-padding");
                         }
                     } else {
-                        var toggleOpen = $(this).hasClass("open");
+                        var dockOpen = self.dock.hasClass("open");
 
-                        $("." + self.options.position + "-dock-toggle.open").removeClass("open");
+                        /*$("." + self.options.position + "-dock-toggle.open").removeClass("open");*/
                         $("." + self.options.position + "-dock.open").removeClass("open");
 
-                        if (!toggleOpen) {
-                            $(this).addClass("open");
+                        if (!dockOpen) {
+                            /*$(this).addClass("open");*/
+                            $("." + self.options.position + "-dock.open").removeClass("open");
                             self.dock.addClass("open");
                             self.dock.removeClass("extra-right-padding");
                         } else {
-                            $(this).removeClass("open");
+                            /*$(this).removeClass("open");*/
                             self.dock.removeClass("open");
                             self.dock.addClass("extra-right-padding");
                         }
                     }
-
-
                 })
                 .appendTo(this.dock);
+            this.dockToggleIconWrapper = $("<div>", {class: "dock-toggle-icon-wrapper"}).appendTo(this.dockToggle);
 
             this.dockToggle.css({"margin-top": (rightDocks.length * 40) + "px"});
+
+            this.dock.one($.support.transition.end,
+                function() {
+                    self.dockToggle.removeClass("bring-on-top");
+                });
+        },
+        open: function() {
+            if (this.options.position == "left") {
+                if (!this.dock.hasClass("open")) {
+                    this.dock.position({
+                        my: "left top",
+                        at: "left top+70",
+                        of: "#service-container"
+                    });
+                    this.dock.addClass("open");
+                    this.dock.removeClass("extra-right-padding");
+                }
+            } else {
+                var dockOpen = this.dock.hasClass("open");
+                if (!dockOpen) {
+                    $("." + this.options.position + "-dock.open").removeClass("open");
+                    this.dock.addClass("open");
+                }
+            }
+        },
+        close: function() {
+            if (this.options.position == "left") {
+                if (this.dock.hasClass("open")) {
+                    this.dock.position({
+                        my: "right top",
+                        at: "left+40 top+70",
+                        of: "#service-container"
+                    });
+                    this.dock.removeClass("open");
+                    this.dock.addClass("extra-right-padding");
+                }
+            } else {
+                this.dock.removeClass("open");
+            }
         },
         addEmptyPanel: function (panelId) {
             return $("<div>").panel({

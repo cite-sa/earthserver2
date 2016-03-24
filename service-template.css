@@ -17,6 +17,10 @@ body {
     padding-right: 3em !important;
 }
 
+.right-dock-toggle.bring-on-top {
+    z-index: 205;
+}
+
 /*.triangle {
     border-left: 1.7em solid transparent;
     border-right: 1.7em solid transparent;
@@ -155,29 +159,40 @@ body {
 }
 
 #service-container .right-dock {
-    max-height: 88%;
-    position: absolute;
-    top: 5em;
-    right: -25%;
-    background: #203864; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left, #2f5597, #203864); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, #2f5597, #203864); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, #2f5597, #203864); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, #2f5597, #203864); /* Standard syntax */
-    /*padding-right: 0px;*/
+max-height: 88%;
+position: absolute;
+top: 5em;
+right: -25%;
+background: #203864; /* For browsers that do not support gradients */
+background: -webkit-linear-gradient(left, #2f5597, #203864); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(right, #2f5597, #203864); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(right, #2f5597, #203864); /* For Firefox 3.6 to 15 */
+background: linear-gradient(to right, #2f5597, #203864); /* Standard syntax */
+/*padding-right: 0px;*/
 }
 
 #service-container .right-dock.plot-dock {
-    width: 35%;
     right: -35%;
+    width: 35%;
 }
 
+
 #service-container .right-dock .right-dock-toggle {
-    /*width: 2em;
-    height: 2em;*/
     right: 0;
     top: 3.34em;
     background-color: #203864;
+}
+
+#service-container .right-dock .right-dock-toggle > .dock-toggle-icon-wrapper {
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#service-container .right-dock .right-dock-toggle > .dock-toggle-icon-wrapper > .dock-toggle-icon {
+    height: 100%;
 }
 
 #service-container .right-dock.open {
@@ -187,7 +202,7 @@ body {
     box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
-#service-container .right-dock.open .right-dock-toggle.open {
+#service-container .right-dock.open .right-dock-toggle {
     z-index: 100;
     box-shadow: 9px 0px 5px 0px rgba(0, 0, 0, 0.5);
 }
