@@ -2,6 +2,7 @@ $(function () {
     $.widget("panel.queryTerminalPanel", $.dock.panel, {
         options: {
             panelType: "query-terminal",
+            collapsible: true
         },
         _create: function () {
             this._super();

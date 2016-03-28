@@ -5,7 +5,8 @@ $(function () {
             panelId: undefined,
             panelType: "empty",
             panelTitle: "",
-            panelSubtitle: ""
+            panelSubtitle: "",
+            collapsible: false
         },
         _create: function () {
             var panel = this._buildPanel();
@@ -47,8 +48,27 @@ $(function () {
                             )
                 );
             }
-            var panelBody = $("<div>", {class: "panel-body"})/*.append(bodyContent)*/
-                .appendTo(panel);
+            var panelBody = $("<div>", {class: "panel-body"}).appendTo(panel);
+
+            if (this.options.collapsible) {
+                panel.addClass("collapsible");
+                panelBody.uniqueId().addClass("collapse in");
+                panel.children(".panel-heading")
+                    .attr({"data-toggle":"collapse", "data-target": "#" + panelBody.attr("id"), "aria-expanded": false, "aria-controls": "panelCollapse"});
+                panel.find(".panel-title:not(.panel-subtitle)")
+                    .addClass("panel-collapser")
+                    .append($("<span>", {class: "glyphicon glyphicon-chevron-up"}))
+                    .click(function() {
+                        var chevron = $(this).children(".glyphicon");
+                        if (panelBody.hasClass("in")) {
+                            chevron.removeClass("glyphicon-chevron-up");
+                            chevron.addClass("glyphicon-chevron-down");
+                        } else {
+                            chevron.removeClass("glyphicon-chevron-down");
+                            chevron.addClass("glyphicon-chevron-up");
+                        }
+                    });
+            }
 
             return {panel: panel, panelBody: panelBody};
         }

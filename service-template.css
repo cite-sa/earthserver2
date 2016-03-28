@@ -222,6 +222,22 @@ background: linear-gradient(to right, #2f5597, #203864); /* Standard syntax */
     box-shadow: none;
 }
 
+.dock .panel.collapsible > .panel-heading {
+    transition: box-shadow 0.3s ease 0s;
+}
+
+.dock .panel.collapsible > .panel-heading:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.7);
+    border-radius: 4px;
+}
+
+.dock .panel > .panel-heading > .panel-title.panel-collapser {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .left-dock .panel {
     margin-left: 1em;
     margin-right: 1em;

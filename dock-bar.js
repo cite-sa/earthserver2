@@ -44,10 +44,13 @@ $(function () {
                 });
             }
 
+            var dockTransition = false;
+
             this.dockToggle = $("<div>", {class: "dock-toggle "
                 + this.options.position + "-dock-toggle"})
                 .click(function () {
                     $(".right-dock-toggle").addClass("bring-on-top");
+                    self.dockTransition = true;
                     if (self.options.position == "left") {
                         if (self.dock.hasClass("open")) {
                             self.dock.position({
@@ -92,10 +95,23 @@ $(function () {
 
             this.dockToggle.css({"margin-top": (rightDocks.length * 40) + "px"});
 
-            this.dock.one($.support.transition.end,
+            this.dock.bind($.support.transition.end,
                 function() {
-                    self.dockToggle.removeClass("bring-on-top");
+                    if (self.dockTransition) {
+                        console.log()
+                        /*console.log($(this))
+                         console.log("transition")*/
+                        $(".bring-on-top").removeClass("bring-on-top");
+                        self.dockTransition = false;
+                    }
                 });
+
+            this.dock.queue(function(){
+                self.dock.one($.support.transition.end, function(){
+                    self.dock.dequeue();
+                });
+                /*$el.css(properties);*/
+            });
         },
         open: function() {
             if (this.options.position == "left") {
