@@ -6,11 +6,9 @@ $(function () {
         },
         _create: function () {
             this._super();
-            this.panelBody
-                .append(
-                    $("<textarea>", {class: "code-area"})
-                )
-            ;
+            var terminal = $("<div>").appendTo(this.panelBody);
+            terminal.codeArea();
+
             this.addButton("run-query", "Run Query").addButton("reset-query", "Reset");
         }
     })

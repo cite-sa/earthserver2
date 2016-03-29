@@ -46,7 +46,7 @@ $(function () {
 
             var dockTransition = false;
 
-            this.dockToggle = $("<div>", {class: "dock-toggle "
+            this.dockToggle = $("<div>", {class: "no-select dock-toggle "
                 + this.options.position + "-dock-toggle"})
                 .click(function () {
                     $(".right-dock-toggle").addClass("bring-on-top");
@@ -98,20 +98,10 @@ $(function () {
             this.dock.bind($.support.transition.end,
                 function() {
                     if (self.dockTransition) {
-                        console.log()
-                        /*console.log($(this))
-                         console.log("transition")*/
                         $(".bring-on-top").removeClass("bring-on-top");
                         self.dockTransition = false;
                     }
                 });
-
-            this.dock.queue(function(){
-                self.dock.one($.support.transition.end, function(){
-                    self.dock.dequeue();
-                });
-                /*$el.css(properties);*/
-            });
         },
         open: function() {
             if (this.options.position == "left") {
