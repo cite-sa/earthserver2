@@ -26,7 +26,7 @@ $(function () {
                 });
                 $(window).resize(function() {
                     if (self.options.position == "left") {
-                        if (self.dockToggle.hasClass("open")) {
+                        if (self.dock.hasClass("open")) {
                             self.dock.position({
                                 my: "left top",
                                 at: "left top+70",
@@ -49,6 +49,7 @@ $(function () {
             this.dockToggle = $("<div>", {class: "no-select dock-toggle "
                 + this.options.position + "-dock-toggle"})
                 .click(function () {
+                    var openDocks = $(".dock.open");
                     $(".right-dock-toggle").addClass("bring-on-top");
                     self.dockTransition = true;
                     if (self.options.position == "left") {
@@ -89,19 +90,30 @@ $(function () {
                             self.dock.addClass("extra-right-padding");
                         }
                     }
+                    if ($(window).width() < 992) {
+                        openDocks.each(function (index, item) {
+                            $.each($(this).data(), function(key, value) {
+                                if (key.match("^dock-")) {
+                                    $(item).data(key).close();
+                                }
+
+                            });
+                        })
+                    }
                 })
                 .appendTo(this.dock);
             this.dockToggleIconWrapper = $("<div>", {class: "dock-toggle-icon-wrapper"}).appendTo(this.dockToggle);
 
             this.dockToggle.css({"margin-top": (rightDocks.length * 40) + "px"});
 
-            this.dock.bind($.support.transition.end,
+            /*alert($(window).width());*/
+            /*this.dock.bind($.support.transition.end,
                 function() {
                     if (self.dockTransition) {
                         $(".bring-on-top").removeClass("bring-on-top");
                         self.dockTransition = false;
                     }
-                });
+                });*/
         },
         open: function() {
             if (this.options.position == "left") {

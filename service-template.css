@@ -235,15 +235,15 @@ body {
 }
 
 #service-container .right-dock {
-max-height: 88%;
-position: absolute;
-top: 5em;
-right: -25%;
-background: #203864; /* For browsers that do not support gradients */
-background: -webkit-linear-gradient(left, #2f5597, #203864); /* For Safari 5.1 to 6.0 */
-background: -o-linear-gradient(right, #2f5597, #203864); /* For Opera 11.1 to 12.0 */
-background: -moz-linear-gradient(right, #2f5597, #203864); /* For Firefox 3.6 to 15 */
-background: linear-gradient(to right, #2f5597, #203864); /* Standard syntax */
+    max-height: 88%;
+    position: fixed;
+    top: 5em;
+    right: -25%;
+    background: #203864; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #2f5597, #203864); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #2f5597, #203864); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #2f5597, #203864); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #2f5597, #203864); /* Standard syntax */
 /*padding-right: 0px;*/
 }
 
@@ -254,6 +254,7 @@ background: linear-gradient(to right, #2f5597, #203864); /* Standard syntax */
 
 
 #service-container .right-dock .right-dock-toggle {
+    position: fixed;
     right: 0;
     top: 3.34em;
     background-color: #203864;
@@ -307,7 +308,7 @@ background: linear-gradient(to right, #2f5597, #203864); /* Standard syntax */
 }
 
 .dock .panel.collapsible.hovered {
-    box-shadow: 7px 0px 4px -6px rgba(0,0,0,0.7);
+    box-shadow: 0px 7px 4px -6px rgba(0,0,0,0.7), 0px -7px 4px -7px rgba(0,0,0,0.7);
 }
 
 .dock .panel > .panel-heading > .panel-title.panel-collapser {
@@ -517,4 +518,31 @@ background: linear-gradient(to right, #2f5597, #203864); /* Standard syntax */
 #coordinate-overlay > .coordinate-container > .coordinate-icon {
     width: 1.8em;
     padding-right: 1em;
+}
+
+/*@media screen and (max-width: 1199px) {
+    #service-container .dock {
+        width: 50%;
+    }
+    #service-container .right-dock {
+        right: -4%;
+    }
+}*/
+
+@media screen and (max-width: 1199px) {
+    #service-container .dock {
+        width: 40%;
+    }
+    #service-container .right-dock {
+        right: -40%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #service-container .dock {
+        width: 60%;
+    }
+    #service-container .right-dock {
+        right: -60%;
+    }
 }
