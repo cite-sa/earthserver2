@@ -4,6 +4,8 @@ $(function () {
         _create: function () {
             var self = this;
 
+            $("#service-navbar").navbar();
+
             /* main dock (required) */
             var leftDock = $("<div>").mainDock().mainDock("instance");
             $("<div>").plotDock().plotDock("instance");

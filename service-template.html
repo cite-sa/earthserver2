@@ -20,11 +20,17 @@
     <link rel="stylesheet" href="libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"/>
     <script src="libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 
+    <link rel="stylesheet" href="libs/codemirror/codemirror.css"/>
+    <link rel="stylesheet" href="libs/codemirror/scroll/simplescrollbars.css"/>
+    <script src="libs/codemirror/codemirror-compressed(1).js"></script>
+    <!--<script src="libs/codemirror/codemirror.js"></script>-->
+    <!--<script src="libs/codemirror/scroll/simplescrollbars.js"></script>-->
     <!--<script data-main="www/landing"
             src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script>-->
 
     <script src="service.js"></script>
     <script src="selection-names.js"></script>
+    <script src="navbar.js"></script>
     <script src="dock-bar.js"></script>
     <script src="main-dock.js"></script>
     <script src="secondary-dock.js"></script>
@@ -41,7 +47,7 @@
     <!--<script src="www/landing.js"></script>-->
 </head>
 <body>
-<nav id="service-navbar" class="navbar navbar-default navbar-fixed-top">
+<!--<nav id="service-navbar" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">
@@ -54,7 +60,8 @@
             </a>
         </div>
     </div>
-</nav>
+</nav>-->
+<nav id="service-navbar"></nav>
 <div id="service-container">
     <canvas id="canvasOne"></canvas>
 </div>

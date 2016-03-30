@@ -6,10 +6,13 @@ $(function () {
         },
         _create: function () {
             this._super();
-            var terminal = $("<div>").appendTo(this.panelBody);
+            var terminal = $("<textarea>").appendTo(this.panelBody);
             terminal.codeArea();
 
             this.addButton("run-query", "Run Query").addButton("reset-query", "Reset");
+            $("#run-query").click(function() {
+                console.log($("#code-area").codeArea("getValue"));
+            });
         }
     })
 });
