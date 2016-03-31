@@ -19,7 +19,6 @@ $(function () {
             this.dock = this.element.addClass("container-fluid dock " + this.options.position + "-dock")
                 .appendTo(this.options.container);
             this.dockId = this.dock.uniqueId().attr("id");
-            console.log(this.dockId)
             if (this.options.position == "left") {
                 this.dock.addClass("extra-right-padding");
                 this.dock.position({
@@ -76,10 +75,10 @@ $(function () {
             this.dockToggle.css({"margin-top": (rightDocks.length * 40) + "px"});
 
             this.dock.bind($.support.transition.end,
-                function() {
-                    $(".bring-on-top")/*.filter(function() {
-                        return $(this).attr("id") != self.dockId;
-                    })*/.removeClass("bring-on-top");
+                function(e) {
+                    if (!$(e.target).hasClass("dock-toggle")) {
+                        $(".bring-on-top").removeClass("bring-on-top");
+                    }
                 });
         },
         open: function() {
