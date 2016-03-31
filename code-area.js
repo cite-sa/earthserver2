@@ -9,7 +9,9 @@ $(function () {
                 lineNumbers: true,
                 lineWrapping: true,
                 scrollbarStyle: "simple",
-                styleActiveLine: true
+                styleActiveLine: true,
+                mode: "simple",
+                placeholder: "Insert WCPS Query here..."
             });
             if (this.options.content != undefined) {
                 this.setValue(this.options.content);
@@ -20,6 +22,12 @@ $(function () {
         },
         setValue: function(content) {
             this.codeArea.setValue(content);
+        },
+        reset: function(content) {
+            if (content == undefined) {
+                this.codeArea.setValue("");
+                this.codeArea.clearHistory();
+            }
         }
     })
 });

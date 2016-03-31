@@ -5,13 +5,17 @@ $(function () {
             collapsible: true
         },
         _create: function () {
+            var self = this;
             this._super();
-            var terminal = $("<textarea>").appendTo(this.panelBody);
-            terminal.codeArea();
+            this.terminal = $("<textarea>").appendTo(this.panelBody);
+            this.terminal.codeArea();
 
             this.addButton("run-query", "Run Query").addButton("reset-query", "Reset");
-            $("#run-query").click(function() {
+            this.panel.find("#run-query").click(function() {
                 console.log($("#code-area").codeArea("getValue"));
+            });
+            this.panel.find("#reset-query").click(function() {
+                self.terminal.codeArea("reset");
             });
         }
     })

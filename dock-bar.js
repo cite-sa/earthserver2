@@ -16,9 +16,12 @@ $(function () {
             var self = this;
             var rightDocks = $(".right-dock");
 
-            this.dock = this.element.addClass("container-fluid extra-right-padding dock " + this.options.position + "-dock")
+            this.dock = this.element.addClass("container-fluid dock " + this.options.position + "-dock")
                 .appendTo(this.options.container);
+            this.dockId = this.dock.uniqueId().attr("id");
+            console.log(this.dockId)
             if (this.options.position == "left") {
+                this.dock.addClass("extra-right-padding");
                 this.dock.position({
                     my: "right top",
                     at: "left+40 top+70",
@@ -43,52 +46,18 @@ $(function () {
 
                 });
             }
-
-            var dockTransition = false;
-
             this.dockToggle = $("<div>", {class: "no-select dock-toggle "
                 + this.options.position + "-dock-toggle"})
                 .click(function () {
+                    $(".right-dock").filter(function() {
+                        return $(this).attr("id") != self.dockId;
+                     }).addClass("bring-on-top");
                     var openDocks = $(".dock.open");
-                    $(".right-dock-toggle").addClass("bring-on-top");
-                    self.dockTransition = true;
-                    if (self.options.position == "left") {
-                        if (self.dock.hasClass("open")) {
-                            self.dock.position({
-                                my: "right top",
-                                at: "left+40 top+70",
-                                of: "#service-container"
-                            });
 
-                            /*$(this).removeClass("open");*/
-                            self.dock.removeClass("open");
-                            self.dock.addClass("extra-right-padding");
-                        } else {
-                            self.dock.position({
-                                my: "left top",
-                                at: "left top+70",
-                                of: "#service-container"
-                            });
-                            /*$(this).addClass("open");*/
-                            self.dock.addClass("open");
-                            self.dock.removeClass("extra-right-padding");
-                        }
+                    if (self.dock.hasClass("open")) {
+                        self.close();
                     } else {
-                        var dockOpen = self.dock.hasClass("open");
-
-                        /*$("." + self.options.position + "-dock-toggle.open").removeClass("open");*/
-                        $("." + self.options.position + "-dock.open").removeClass("open");
-
-                        if (!dockOpen) {
-                            /*$(this).addClass("open");*/
-                            $("." + self.options.position + "-dock.open").removeClass("open");
-                            self.dock.addClass("open");
-                            self.dock.removeClass("extra-right-padding");
-                        } else {
-                            /*$(this).removeClass("open");*/
-                            self.dock.removeClass("open");
-                            self.dock.addClass("extra-right-padding");
-                        }
+                        self.open();
                     }
                     if ($(window).width() < 992) {
                         openDocks.each(function (index, item) {
@@ -106,14 +75,12 @@ $(function () {
 
             this.dockToggle.css({"margin-top": (rightDocks.length * 40) + "px"});
 
-            /*alert($(window).width());*/
-            /*this.dock.bind($.support.transition.end,
+            this.dock.bind($.support.transition.end,
                 function() {
-                    if (self.dockTransition) {
-                        $(".bring-on-top").removeClass("bring-on-top");
-                        self.dockTransition = false;
-                    }
-                });*/
+                    $(".bring-on-top")/*.filter(function() {
+                        return $(this).attr("id") != self.dockId;
+                    })*/.removeClass("bring-on-top");
+                });
         },
         open: function() {
             if (this.options.position == "left") {

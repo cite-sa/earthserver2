@@ -29,14 +29,12 @@ $(function () {
             var self = this;
             dropdown.on('shown.bs.dropdown', function () {
                 if (dropdownMenu.height() + dropdownMenu.offset().top > self.options.dock.height() + self.options.dock.offset().top) {
-                    console.log("papatzia!");
                     dropdownMenu.css({"position": "fixed", "top": dropdownMenu.offset().top, "left": dropdownMenu.offset().left, "width": dropdownMenu.outerWidth()});
                 }
             });
 
             dropdown.on('hide.bs.dropdown', function () {
                 if (dropdownMenu.height() + dropdownMenu.offset().top > self.options.dock.height() + self.options.dock.offset().top) {
-                    console.log("papatzia off!");
                     dropdownMenu.css({"position": "absolute", "top": "100%", "left": 0, "width": "100%"});
                 }
             });
