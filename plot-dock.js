@@ -9,15 +9,15 @@ $(function () {
             this.element.addClass("plot-dock");
             this._super();
             this.element.append($("<span>", {class: "remove-plot"})
-                .append($("<span>", {class: "remove-plot-icon glyphicon glyphicon-remove-circle"}))
+                .append($("<span>", {class: "remove-plot-icon glyphicon glyphicon-remove"}))
                 .click(function() {
                     self.close();
-                    self.plotPanel.empty();
+                    self.element.find(".panel-body").empty();
                 }));
             this.dockToggleIconWrapper.append(
                 $("<img>", {class: "dock-toggle-icon", src: this.options.toggleIcon})
             );
-            this.plotPanel = this.addEmptyPanel();
+            this.addEmptyPanel();
         }
     })
 });

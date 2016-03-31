@@ -21,9 +21,6 @@ $(function () {
             this.panel = panel.panel;
             this.panelBody = panel.panelBody;
         },
-        empty: function() {
-            this.panelBody.empty();
-        },
         addButton: function(buttonId, buttonContent) {
             var buttonContainer = this.panelBody.find(".panel-btn-container");
             if (buttonContainer.length == 0) {

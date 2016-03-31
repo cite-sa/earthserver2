@@ -112,29 +112,46 @@ body {
     padding: 4px 2px;
 }
 
-#service-navbar .navbar-home-link {
+#service-navbar .navbar-icon {
     padding: 15px;
     line-height: 20px;
-    /*position: relative;
-    display: block;*/
     color: #FFFFFF;
+    transition: background-color 0.3s ease 0s;
 }
 
-#service-navbar .navbar-home-link > .navbar-home-link-arrow {
+#service-navbar .navbar-icon:hover,
+#service-navbar .navbar-icon:active,
+#service-navbar .navbar-icon:hover:focus {
+    background-color: #2F5597;
+}
+
+#service-navbar .navbar-icon:focus {
+    background-color: transparent;
+}
+#service-navbar .navbar-icon:active {
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.3) inset;
+}
+
+#service-navbar .navbar-icon:focus,
+#service-navbar .navbar-icon:active {
+    outline: none;
+}
+
+.navbar-icon > .navbar-user-arrow {
+    margin-left: 5px;
+    top: 0px;
+    font-size: 10px;
+}
+
+#service-navbar .navbar-icon > .navbar-home-link-arrow {
     font-size: 0.9em;
 }
 
-#service-navbar .navbar-home-link > .navbar-home-link-text {
+#service-navbar .navbar-icon > .navbar-home-link-text {
     margin-left: 0.5em;
 }
 
-#service-navbar .navbar-sign-in {
-    padding: 15px;
-    line-height: 20px;
-    /*position: relative;
-    display: block;*/
-    color: #FFFFFF;
-}
+
 
 #service-navbar .divider-container {
     padding: 15px 5px;
@@ -267,23 +284,22 @@ body {
 }
 
 #service-container .right-dock .remove-plot {
-    padding: 15px;
+    padding: 10px;
     position: absolute;
     top: 0;
     right: 0;
 }
 
 #service-container .right-dock .remove-plot-icon {
+    padding: 5px;
     border-radius: 100%;
-    font-size: 1.3em;
     color: #FFFFFF;
-    transition: color 0.3s ease 0s;
+    transition: background-color 0.3s ease 0s;
 }
 
 #service-container .right-dock .remove-plot-icon:hover {
     cursor: pointer;
-    color: #2F5597;
-    /*background-color: #2F5597;*/
+    background-color: #2F5597;
 }
 
 #service-container .right-dock .right-dock-toggle > .dock-toggle-icon-wrapper {
@@ -384,10 +400,17 @@ body {
 }
 
 .dock .panel > .panel-body > .panel-btn-container > .panel-btn:hover,
-.dock .panel > .panel-body > .panel-btn-container > .panel-btn:active,
-.dock .panel > .panel-body > .panel-btn-container > .panel-btn:focus {
-    outline: none;
+.dock .panel > .panel-body > .panel-btn-container > .panel-btn:hover:focus{
     background-color: #2F5597;
+}
+
+.dock .panel > .panel-body > .panel-btn-container > .panel-btn:active {
+    background-color: #2F5597;
+}
+
+.dock .panel > .panel-body > .panel-btn-container > .panel-btn:focus,
+.dock .panel > .panel-body > .panel-btn-container > .panel-btn:active {
+    outline: none;
 }
 
 .selector > .selector-btn {

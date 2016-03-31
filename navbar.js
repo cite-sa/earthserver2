@@ -15,11 +15,11 @@ $(function () {
                     /*.append($("<div>", {/!*id: "navbar-collapse-1", *!/class: "navbar-right"})*/
                         .append($("<ul>", {class: "nav /*navbar-nav*/"})
                             .append($("<li>", {class: "pull-left"})
-                                .append($("<a>", {class: "hidden-xs navbar-home-link", href: "#" })
+                                .append($("<a>", {class: "hidden-xs navbar-icon", href: "#" })
                                     .append($("<span>", {class: "hidden-xs navbar-home-link-arrow glyphicon" +
                                     " glyphicon-chevron-left"}))
                                     .append($("<span>", {class: "hidden-xs navbar-home-link-text"}).text("Back to home"))
-                                ).append($("<a>", {class: "visible-xs navbar-home-link", href: "#" })
+                                ).append($("<a>", {class: "visible-xs navbar-icon", href: "#" })
                                     .append($("<span>", {class: "glyphicon glyphicon-home"}))
                                 )
                             )
@@ -28,11 +28,13 @@ $(function () {
                                     .append($("<span>", {class: "divider"}))
                                 )
                             ).append($("<li>", {class: "pull-right"})
-                                .append($("<div>", {class: "hidden-xs navbar-sign-in", href: "#" }).text("Signed in" +
+                                .append($("<div>", {class: "hidden-xs navbar-icon", href: "#" }).text("Signed in" +
                                         " as ")
                                     .append($("<a>", {href: "#", class: ""}).text("me"))
-                                ).append($("<a>", {class: "visible-xs navbar-sign-in", href: "#"})
+                                ).append($("<a>", {class: "visible-xs navbar-icon", href: "#"})
                                     .append($("<span>", {class: "glyphicon glyphicon-user"}))
+                                    .append($("<span>", {class: "navbar-user-arrow glyphicon" +
+                                    " glyphicon-triangle-bottom"}))
 
                                 )
                             )

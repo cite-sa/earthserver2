@@ -9,7 +9,8 @@ $(function () {
             this._initDock();
             this.element.mCustomScrollbar({
                 /*axis: "yx",*/
-                theme: "light-thin"
+                theme: "light-thin",
+                mouseWheel: { disableOver: ["pre"] }
             });
         },
         _initDock: function () {
