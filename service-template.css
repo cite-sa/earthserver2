@@ -50,7 +50,18 @@ body {
     top: -1.5em;
     position: absolute;
 }*/
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
 
+    border-bottom: 8px solid #203864;
+
+    position: absolute;
+    right: 1px;
+    top: -8px;
+}
 /*.triangle {
     position: relative;
 }
@@ -98,6 +109,11 @@ body {
     box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.7);
 }
 
+#service-navbar .navbar-brand.earthserver-logo:focus,
+#service-navbar .navbar-brand.service-logo:focus {
+    outline: none;
+}
+
 #service-navbar .navbar-brand.service-logo {
     margin-left: 1px;
 }
@@ -122,6 +138,7 @@ body {
 #service-navbar .navbar-icon:hover,
 #service-navbar .navbar-icon:active,
 #service-navbar .navbar-icon:hover:focus {
+    cursor: pointer;
     background-color: #2F5597;
 }
 
@@ -163,6 +180,26 @@ body {
 
 #service-navbar .divider-container > .divider {
     border-left: 1px solid white;
+}
+
+#service-navbar #user-account #account-info-panel {
+    width: 10em;
+    height: 15em;
+    border-radius: 0;
+    position: absolute;
+    top: 4.2em;
+    right: 1em;
+    background-color: #203864;
+    box-shadow: 3px 3px 5px -1px rgba(0,0,0,0.5);
+    opacity: 0;
+}
+
+#service-navbar #user-account #account-info-panel.collapse {
+    transition: none;
+}
+
+#service-navbar #user-account #account-info-panel.collapsing {
+    transition: none;
 }
 
 /* Docks */
@@ -512,6 +549,10 @@ body {
     padding-left: 0;
 }
 
+.query-terminal-panel #custom-query-selector {
+    margin-bottom: 15px;
+}
+
 .query-terminal-panel #code-area {
     height: 10em;
     max-height: 10em;
@@ -591,7 +632,6 @@ body {
 @media screen and (max-width: 767px) {
     #service-container .dock {
         width: 60%;
-        /*min-width: 280px;*/
     }
     #service-container .left-dock {
         min-width: 280px;
@@ -599,6 +639,18 @@ body {
     #service-container .right-dock {
         right: -60%;
     }
+}
+
+@media screen and (min-width: 767px) {
+    #service-navbar .navbar-icon.account-info:hover {
+        cursor: default;
+        background-color: transparent;
+    }
+
+    #service-navbar .navbar-icon.account-info > #account-info-toggle:hover {
+        cursor: default;
+    }
+
 }
 
 .nav-collapse, .nav-collapse.collapse {

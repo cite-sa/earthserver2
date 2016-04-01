@@ -72,7 +72,6 @@ $(function () {
                 })
                 .appendTo(this.dock);
             this.dockToggleIconWrapper = $("<div>", {class: "dock-toggle-icon-wrapper"}).appendTo(this.dockToggle);
-
             this.dockToggle.css({"margin-top": (rightDocks.length * 40) + "px"});
 
             this.dock.bind($.support.transition.end,

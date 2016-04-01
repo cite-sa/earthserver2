@@ -18,7 +18,7 @@ $(function () {
             }
         },
         getValue: function() {
-            return this.codeArea.getValue();
+            return this.codeArea.getValue().replace(/\n/g, " ").replace(/\s\s+/g, " ");
         },
         setValue: function(content) {
             this.codeArea.setValue(content);

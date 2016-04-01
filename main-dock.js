@@ -50,17 +50,15 @@ $(function () {
                 dock: this.dock,
                 panelId: "coverage-selector",
                 panelTitle: "available coverages",
-                buttonId: "coverageDropdown"
+                buttonId: "coverageDropdown",
+                defaultOption: "Select coverage"
             }).selectPanel("instance");
 
             var self = this;
             $.each(coverageNames, function (index, coverage) {
-                if (index == 0) {
-                    self.coverageSelectPanel.setButtonContent(coverage);
-                }
                 self.coverageSelectPanel.addSelectOption(coverage.replace(/ /g, '').toLowerCase(), coverage);
             });
-            self.coverageSelectPanel.addButton("retrieve-coverage", "Retrieve");
+            this.coverageSelectPanel.addButton("retrieve-coverage", "Retrieve");
 
             return this;
         },

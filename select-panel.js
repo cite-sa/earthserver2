@@ -3,7 +3,8 @@ $(function () {
         options: {
             panelType: "select",
             dropdownId: undefined,
-            buttonContent: undefined
+            buttonContent: undefined,
+            defaultOption: undefined
         },
         _create: function () {
             this._super();
@@ -25,6 +26,11 @@ $(function () {
                     )
                 ).appendTo(this.panelBody);
                 var dropdownMenu = $("<ul>", {class: "dropdown-menu", "aria-labelledby": "buttonId"}).appendTo(dropdown);
+
+            if (this.options.defaultOption != undefined) {
+                this.addSelectOption(this.options.defaultOption.toLowerCase().replace(" ", "-"), this.options.defaultOption);
+                this.setButtonContent(this.options.defaultOption);
+            }
 
             var self = this;
             dropdown.on('shown.bs.dropdown', function () {
