@@ -1,6 +1,7 @@
 $(function () {
     $.widget("earthserver.navbar", {
         options: {
+            serviceLogo: undefined
         },
         _create: function () {
             var self = this;
@@ -10,7 +11,7 @@ $(function () {
                         .append($("<a>", {class: "navbar-brand earthserver-logo", href: "http://www.earthserver.eu"})
                             .append($("<img>", {class: "img-responsive", src: "images/logos/earthserver_logo.png", alt: "EarthServer Logo"}))
                         ).append($("<a>", {class: "navbar-brand service-logo", href: "#"})
-                            .append($("<img>", {class: "img-responsive", src: "images/logos/service_logo_dummy.jpg", alt: "Service Logo"}))
+                            .append($("<img>", {class: "img-responsive", alt: "Service Logo"}))
                         )
                     ).append($("<div>", {class: "navbar-header pull-right"})
                     /*.append($("<div>", {/!*id: "navbar-collapse-1", *!/class: "navbar-right"})*/
@@ -46,9 +47,13 @@ $(function () {
                 );
             this._buildAccountInfoCollapse();
             this.element.find((".account-info-toggle")).click(function() {
-                console.log("clicked")
                 self._onAccountIconClick();
             });
+            if (this.options.serviceLogo != undefined) {
+                this.element.find(".service-logo > img").attr("src", this.options.serviceLogo);
+            } else {
+                this.element.find(".service-logo > img").attr("src", "images/logos/service_logo_dummy.jpg");
+            }
         },
         _onAccountIconClick: function() {
             var self = this;

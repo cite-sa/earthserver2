@@ -54,11 +54,7 @@ $(function () {
                      }).addClass("bring-on-top");
                     var openDocks = $(".dock.open");
 
-                    if (self.dock.hasClass("open")) {
-                        self.close();
-                    } else {
-                        self.open();
-                    }
+                    self.dock.hasClass("open") ? self.close() : self.open();
                     if ($(window).width() < 992) {
                         openDocks.each(function (index, item) {
                             $.each($(this).data(), function(key, value) {

@@ -10,7 +10,7 @@ $(function () {
                 lineWrapping: true,
                 scrollbarStyle: "simple",
                 styleActiveLine: true,
-                mode: "simple",
+                inputStyle: "textarea",
                 placeholder: "Insert WCPS Query here..."
             });
             if (this.options.content != undefined) {
