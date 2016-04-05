@@ -1292,6 +1292,13 @@ and dependencies (minified).
 				});
 			}
 			function _onTouchstart(e){
+				/* --------- Custom code for scrolling on touch --------- */
+				if(($(e.target).attr("class") != undefined && $(e.target).attr("class").match("^CodeMirror"))
+					|| ($(e.target).parent().attr("class") != undefined && $(e.target).parent().attr("class").match("^CodeMirror"))
+					|| $(e.target).is("pre") || $(e.target).is("textarea")) {
+					return;
+				}
+				/* ------------------------------------------------------- */
 				if(!_pointerTouch(e) || touchActive || _coordinates(e)[2]){touchable=0; return;}
 				touchable=1; touchDrag=0; docDrag=0; draggable=1;
 				$this.removeClass("mCS_touch_action");
@@ -1301,6 +1308,13 @@ and dependencies (minified).
 				touchIntent=[_coordinates(e)[0],_coordinates(e)[1]];
 			}
 			function _onTouchmove(e){
+				/* --------- Custom code for scrolling on touch --------- */
+				if(($(e.target).attr("class") != undefined && $(e.target).attr("class").match("^CodeMirror"))
+					|| ($(e.target).parent().attr("class") != undefined && $(e.target).parent().attr("class").match("^CodeMirror"))
+					|| $(e.target).is("pre") || $(e.target).is("textarea")) {
+					return;
+				}
+				/* ------------------------------------------------------- */
 				if(!_pointerTouch(e) || touchActive || _coordinates(e)[2]){return;}
 				if(!o.documentTouchScroll){e.preventDefault();} 
 				e.stopImmediatePropagation();
@@ -1533,6 +1547,11 @@ and dependencies (minified).
 		
 		/* disables mouse-wheel when hovering specific elements like select, datalist etc. */
 		_disableMousewheel=function(el,target){
+			/* --------- Custom code for scrolling on touch --------- */
+			if ($(target).hasClass("Codemirror-scroll")) {
+				return true;
+			}
+			/* ------------------------------------------------------- */
 			var tag=target.nodeName.toLowerCase(),
 				tags=el.data(pluginPfx).opt.mouseWheel.disableOver,
 				/* elements that require focus */
