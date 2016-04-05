@@ -5,7 +5,11 @@ $(function () {
             var self = this;
 
             /* Build navbar */
-            $("#service-navbar").navbar({serviceLogo: "images/logos/service_logo_dummy.jpg"});
+            $("#service-navbar").navbar({
+                serviceLogo: "images/logos/service_logo_dummy.jpg",
+                serviceLogoUrl: "http://www.serviceUrl.com",
+                homeUrl: "http://www.homeUrl.com"
+            });
 
             /* main dock (required) */
             var leftDock = $("<div>").mainDock().mainDock("instance");
