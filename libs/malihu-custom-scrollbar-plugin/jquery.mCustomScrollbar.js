@@ -1294,7 +1294,8 @@ and dependencies (minified).
 			function _onTouchstart(e){
 				/* --------- Custom code for scrolling on touch --------- */
 				if(($(e.target).attr("class") != undefined && $(e.target).attr("class").match("^CodeMirror"))
-					|| ($(e.target).parent().attr("class") != undefined && $(e.target).parent().attr("class").match("^CodeMirror")) || $(e.target).is("pre")) {
+					|| ($(e.target).parent().attr("class") != undefined && $(e.target).parent().attr("class").match("^CodeMirror"))
+					|| $(e.target).is("pre") || $(e.target).is("textarea")) {
 					return;
 				}
 				/* ------------------------------------------------------- */
@@ -1309,7 +1310,8 @@ and dependencies (minified).
 			function _onTouchmove(e){
 				/* --------- Custom code for scrolling on touch --------- */
 				if(($(e.target).attr("class") != undefined && $(e.target).attr("class").match("^CodeMirror"))
-					|| ($(e.target).parent().attr("class") != undefined && $(e.target).parent().attr("class").match("^CodeMirror")) || $(e.target).is("pre")) {
+					|| ($(e.target).parent().attr("class") != undefined && $(e.target).parent().attr("class").match("^CodeMirror"))
+					|| $(e.target).is("pre") || $(e.target).is("textarea")) {
 					return;
 				}
 				/* ------------------------------------------------------- */

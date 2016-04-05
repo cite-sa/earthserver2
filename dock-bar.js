@@ -6,11 +6,13 @@ $(function () {
             toggleIcon: undefined
         },
         _create: function () {
+            var self = this;
             this._initDock();
-            this.element.mCustomScrollbar({
-                /*axis: "yx",*/
+            this.scrollbar = this.element.mCustomScrollbar({
                 theme: "light-thin",
-                mouseWheel: { disableOver: ["pre"] }
+                mouseWheel: {
+                    disableOver: ["textarea"]
+                }
             });
         },
         _initDock: function () {

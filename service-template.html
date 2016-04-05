@@ -17,24 +17,24 @@
 
     <!--<script src="libs/malihu-custom-scrollbar-plugin/jquery.mousewheel.js"></script>-->
 
-    <link rel="stylesheet" href="libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"/>
+    <link rel="stylesheet" href="libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"/>
     <script src="libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
 
-    <link rel="stylesheet" href="libs/codemirror/codemirror.css"/>
-    <!--<link rel="stylesheet" href="libs/codemirror/simplescrollbars.css"/>-->
+
     <script src="libs/codemirror/codemirror.js"></script>
-    <!--<script src="libs/codemirror/codemirror-compressed(1).js"></script>-->
-    <!--<script src="libs/codemirror/codemirror.js"></script>-->
-    <!--<script src="libs/codemirror/scroll/simplescrollbars.js"></script>-->
-    <!--<script data-main="www/landing"
-            src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script>-->
-    <script src="libs/codemirror/mode/simple.js"></script>
+    <link rel="stylesheet" href="libs/codemirror/codemirror.css"/>
+    <!--<script src="libs/codemirror/codemirror-compressed.js"></script>-->
+    <!--<link rel="stylesheet" href="libs/codemirror/simplescrollbars.css"/>-->
+
     <script src="libs/codemirror/scroll/simplescrollbars.js"></script>
     <link rel="stylesheet" href="libs/codemirror/scroll/simplescrollbars.css"/>
     <script src="libs/codemirror/display/placeholder.js"></script>
     <script src="libs/codemirror/dialog/dialog.js"></script>
     <link rel="stylesheet" href="libs/codemirror/dialog/dialog.css"/>
     <script src="libs/codemirror/selection/active-line.js"></script>
+
+    <!--<script data-main="www/landing"
+            src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script>-->
 
     <script src="service.js"></script>
     <script src="selection-names.js"></script>
@@ -55,24 +55,10 @@
     <!--<script src="www/landing.js"></script>-->
 </head>
 <body>
-<!--<nav id="service-navbar" class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">
-                <img alt="Service logo" src="images/logos/service_logo_dummy.jpg" class="img-responsive">
-            </a>
-        </div>
-        <div>
-            <a class="navbar-brand navbar-right" href="http://www.earthserver.eu">
-                <img src="images/logos/earthserver_logo.png">
-            </a>
-        </div>
+    <nav id="service-navbar"></nav>
+    <div id="service-container">
+        <canvas id="canvasOne"></canvas>
     </div>
-</nav>-->
-<nav id="service-navbar"></nav>
-<div id="service-container">
-    <canvas id="canvasOne"></canvas>
-</div>
 <script type="application/javascript">
     $(function () {
         $("#service-container").service();

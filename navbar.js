@@ -51,8 +51,6 @@ $(function () {
             });
             if (this.options.serviceLogo != undefined) {
                 this.element.find(".service-logo > img").attr("src", this.options.serviceLogo);
-            } else {
-                this.element.find(".service-logo > img").attr("src", "images/logos/service_logo_dummy.jpg");
             }
         },
         _onAccountIconClick: function() {

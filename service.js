@@ -4,7 +4,8 @@ $(function () {
         _create: function () {
             var self = this;
 
-            $("#service-navbar").navbar();
+            /* Build navbar */
+            $("#service-navbar").navbar({serviceLogo: "images/logos/service_logo_dummy.jpg"});
 
             /* main dock (required) */
             var leftDock = $("<div>").mainDock().mainDock("instance");
