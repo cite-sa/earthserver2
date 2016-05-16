@@ -31,6 +31,14 @@ $(function () {
                 });
                 $(window).resize(function() {
                     if (self.options.position == "left") {
+                        if ($(window).width() < 992) {
+                            var leftDockOpen = self.dock.hasClass("open");
+                            $(".dock").each(function(index, item) {
+                                if (leftDockOpen && $(this).hasClass("right-dock") && $(this).hasClass("open")) {
+                                    $(this).removeClass("open");
+                                }
+                            });
+                        }
                         if (self.dock.hasClass("open")) {
                             self.dock.position({
                                 my: "left top",

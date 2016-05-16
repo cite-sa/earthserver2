@@ -1,7 +1,9 @@
 $(function () {
     $.widget("earthserver.navbar", {
         options: {
-            serviceLogo: undefined
+            serviceLogo: undefined,
+            serviceLogoUrl: undefined,
+            homeUrl: undefined
         },
         _create: function () {
             var self = this;
@@ -10,18 +12,18 @@ $(function () {
                     .append($("<div>", {class: "navbar-header pull-left"})
                         .append($("<a>", {class: "navbar-brand earthserver-logo", href: "http://www.earthserver.eu"})
                             .append($("<img>", {class: "img-responsive", src: "images/logos/earthserver_logo.png", alt: "EarthServer Logo"}))
-                        ).append($("<a>", {class: "navbar-brand service-logo", href: "#"})
+                        ).append($("<a>", {class: "navbar-brand service-logo"})
                             .append($("<img>", {class: "img-responsive", alt: "Service Logo"}))
                         )
                     ).append($("<div>", {class: "navbar-header pull-right"})
                     /*.append($("<div>", {/!*id: "navbar-collapse-1", *!/class: "navbar-right"})*/
                         .append($("<ul>", {class: "nav"})
                             .append($("<li>", {class: "pull-left"})
-                                .append($("<a>", {class: "hidden-xs navbar-icon", href: "#" })
+                                .append($("<a>", {class: "hidden-xs navbar-icon navbar-home-link"})
                                     .append($("<span>", {class: "hidden-xs navbar-home-link-arrow glyphicon" +
                                     " glyphicon-chevron-left"}))
                                     .append($("<span>", {class: "hidden-xs navbar-home-link-text"}).text("Back to home"))
-                                ).append($("<a>", {class: "visible-xs navbar-icon", href: "#" })
+                                ).append($("<a>", {class: "visible-xs navbar-icon navbar-home-link"})
                                     .append($("<span>", {class: "glyphicon glyphicon-home"}))
                                 )
                             )
@@ -49,8 +51,14 @@ $(function () {
             this.element.find((".account-info-toggle")).click(function() {
                 self._onAccountIconClick();
             });
+            if (this.options.serviceLogoUrl != undefined) {
+                this.element.find(".service-logo").attr("href", this.options.serviceLogoUrl);
+            }
             if (this.options.serviceLogo != undefined) {
                 this.element.find(".service-logo > img").attr("src", this.options.serviceLogo);
+            }
+            if (this.options.homeUrl != undefined) {
+                this.element.find(".navbar-home-link").attr("href", this.options.homeUrl);
             }
         },
         _onAccountIconClick: function() {
