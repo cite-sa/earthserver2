@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body data-spy="scroll" data-target="#service-navbar" data-offset="70">
-<div id="es-logo-wrapper">
+<!--<div id="es-logo-wrapper">
     <a class="" href="http://www.earthserver.eu">
         <img id="es-logo" src="images/logos/earth_server_logo.png">
     </a>
-</div>
+</div>-->
 <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -58,7 +58,7 @@
 </div>
 
 <nav id="service-navbar" class="navbar navbar-default navbar-fixed-top service-navbar">
-    <!--<div class="navbar-shadow"></div>-->
+    <div class="navbar-shadow"></div>
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#service-navbar-collapse-menu" aria-expanded="false">
@@ -67,9 +67,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
-                <img alt="Logo" src="images/logos/logo_dummy_1.jpg">
+            <a class="navbar-brand" href="http://www.earthserver.eu">
+                <img id="es-logo" src="images/logos/earth_server_logo.png">
             </a>
+            <!--<a class="navbar-brand" href="#">
+                <img alt="Logo" src="images/logos/logo_dummy_1.jpg">
+            </a>-->
         </div>
         <div class="collapse navbar-collapse" id="service-navbar-collapse-menu">
             <ul class="visible-xs nav navbar-nav navbar-right internal-links">
@@ -108,6 +111,13 @@
     </div>
 </nav>
 <div class="container service-content">
+    <div class="row service-logo-wrapper">
+        <div class="col-xs-12">
+            <a class="" href="">
+                <img id="service-logo" src="images/logos/logo_dummy_1.jpg">
+            </a>
+        </div>
+    </div>
     <div class="row">
         <div class="col-xs-12 carousel">
             <div id="service-carousel" class="carousel slide service-carousel"><!--data-ride="carousel"-->
@@ -537,10 +547,10 @@
                             .removeClass("glyphicon-chevron-down")
                             .addClass("glyphicon-chevron-up");
                 }).on("hide.bs.collapse", function (e) {
-                    $(e.target).prev(".panel-heading-hover").find(".accordion-subject-title").children("span")
-                            .removeClass("glyphicon-chevron-up")
-                            .addClass("glyphicon-chevron-down");
-                });
+            $(e.target).prev(".panel-heading-hover").find(".accordion-subject-title").children("span")
+                    .removeClass("glyphicon-chevron-up")
+                    .addClass("glyphicon-chevron-down");
+        });
         $(".panel-heading").click(function() {});
         $("#go-to-top").click(function() {
             $("html, body").animate({ scrollTop: "0px" });

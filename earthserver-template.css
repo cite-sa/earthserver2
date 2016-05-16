@@ -67,37 +67,44 @@ body {
     /*height: 3em;*/
     /*border-color: #003e7f;*/
     border: none;
-    background-color: #E7E6E6;
-    box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.9);
+    background-color: #203864;
+    /*box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.9);*/
 }
 
 .service-navbar > .navbar-shadow {
-    height: 1.1em;
+    top: 58px;
     width: 100%;
     position: absolute;
-    top: 2.46em;
     z-index: 150;
-    box-shadow: 0px 3px 3px #777;
+    box-shadow: 0px -7px 4px 1px rgba(0,0,0,0.7);
+    height: 0px;
 }
 
 .service-navbar .navbar-brand {
+    height: 40px;
     padding: 2px;
-    transition: transform 0.2s linear 0s;
+    border-radius: 0px 0px 12px 12px;
+    background-color: #f2f2f2;
+}
+
+.service-navbar .navbar-header .navbar-brand:hover {
+    background-color: #f2f2f2;
 }
 
 .service-navbar #service-navbar-collapse-menu .menu-items .vertical-line > span {
-    border-left: 1px solid #8792A8;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
     color: transparent;
 }
+
 
 /*nav.service-navbar #service-navbar-collapse-menu .menu-items .sign-in {
     border-left: 1px solid #8792A8;
     padding-left: 1.5em;
 }*/
 
-.service-navbar .navbar-header .navbar-brand:hover {
+/*.service-navbar .navbar-header .navbar-brand:hover {
     transform: scale(0.95, 0.95);
-}
+}*/
 
 /*#service-navbar .navbar-header > .navbar-toggle:hover > .icon-bar,
 #service-navbar .navbar-header > .navbar-toggle:focus > .icon-bar {
@@ -204,6 +211,10 @@ body {
 
 #service-navbar #service-navbar-collapse-anchor .internal-links {
     padding-bottom: 2px;
+    box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.5);
+    /*border-width: 0px 3px 3px 3px;
+    border-style: solid;
+    border-color: #ffffff;*/
 }
 
 #service-navbar #service-navbar-collapse-menu .menu-items > li,
@@ -212,19 +223,19 @@ body {
 }
 
 
-#service-navbar #service-navbar-collapse-menu .menu-items > li:hover,
-#service-navbar #service-navbar-collapse-menu .menu-items > li.active {
-    border-bottom: 2px solid #003E7F;
+#service-navbar #service-navbar-collapse-menu .menu-items > li:not(#vertical-line-li):hover,
+#service-navbar #service-navbar-collapse-menu .menu-items:not(#vertical-line-li) > li.active:not(#vertical-line-li) {
+    border-bottom: 2px solid #ffffff;
 }
 
-#service-navbar #service-navbar-collapse-menu .menu-items > li.vertical-line-li:hover,
+/*#service-navbar #service-navbar-collapse-menu .menu-items > li.vertical-line-li:hover,
 #service-navbar #service-navbar-collapse-menu .menu-items > li.vertical-line-li.active {
     border-bottom: 2px solid transparent;
-}
+}*/
 
 #service-navbar #service-navbar-collapse-anchor .internal-links > li:hover,
 #service-navbar #service-navbar-collapse-anchor .internal-links > li.active {
-    border-bottom: 2px solid #E7E6E6;
+    border-bottom: 2px solid #203864;
 }
 
 #service-navbar #service-navbar-collapse-menu .menu-items > li.active > a,
@@ -258,19 +269,20 @@ body {
 .service-navbar > .container > #service-navbar-collapse-anchor > .navbar-nav {
     /*position: absolute;*/
     /*right: 0;*/
-    z-index: 100;
-    background-color: #003E7F;
-    color: #F3F3F3;
+    /*z-index: 100;*/
+    padding: 0px 15px;
+    background-color: #F3F3F3;
+    border-radius: 0px 0px 12px 12px;
+    color: #203864;
 }
 
 .service-navbar > .container > #service-navbar-collapse-anchor ul.internal-links > li > a {
-    color: #F3F3F3;
+    color: #203864;
 }
 
 .service-navbar .container > #service-navbar-collapse-anchor > .navbar-nav {
     /*float: right;*/
-    border-radius: 0px 0px 12px 12px;
-    padding: 0px 15px;
+
     /*background-color: rgba(217, 217, 217, 0.8);*/
 }
 /*nav.service-navbar .container > .row > .navbar-nav > li > a {
@@ -286,7 +298,7 @@ nav.service-navbar .container > .row > .navbar-nav > li:hover > a {
 }*/
 
 #service-navbar-collapse-menu > ul > li > a {
-    color: #003e7f;
+    color: #ffffff;
 }
 
 @media (max-width: 767px) {
@@ -299,7 +311,16 @@ nav.service-navbar .container > .row > .navbar-nav > li:hover > a {
     }
 }
 
-.service-content > .row > .carousel,
+.service-content .service-logo-wrapper {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.service-content #service-logo {
+    width: 140px;
+}
+
+/*.service-content > .row > .carousel,*/
 .service-content > .row > .service-social-media-btns {
     margin-top: 3em;
 }
@@ -348,10 +369,6 @@ nav.service-navbar .container > .row > .navbar-nav > li:hover > a {
         width: auto;
         max-width: none;
     }
-}
-
-.publicity-img{
-    text-align:center;
 }
 
 .service-content .enter-service-description {
@@ -407,20 +424,20 @@ nav.service-navbar .container > .row > .navbar-nav > li:hover > a {
 
 .service-content .service-info .service-name {
     text-align: center;
-    color: #003e7f;
+    color: #203864;
 }
 
 .service-content .service-info .service-moto {
     margin-top: 10px;
     margin-bottom: 20px;
     text-align: center;
-    color: #003e7f;
+    color: #203864;
     font-style: italic;
 }
 
 .service-content .service-info .service-description {
     text-align: justify;
-    color: #000000;
+    color: #203864;
 }
 
 .service-content .service-read-more {
@@ -484,8 +501,13 @@ nav.service-navbar .container > .row > .navbar-nav > li:hover > a {
     border-radius: 8px;
     position: relative;
     background: linear-gradient(to bottom, #e6e6e6 0%,#ffffff 100%);
-    color: #003e7f;
+    /*color: #003e7f;*/
 }
+
+.service-content .panel-heading-hover .accordion-subject-title {
+    color: #203864;
+}
+
 .service-content .panel-heading-hover:hover {
     cursor: pointer;
 }
@@ -513,12 +535,12 @@ nav.service-navbar .container > .row > .navbar-nav > li:hover > a {
 .service-content .earthserver-init-info {
     padding: 15px 20px;
     border-radius: 10px;
-    background-color: rgba(256, 256, 256, 0.25);
-    border: 1px solid #EDEDED;
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 2px solid #ffffff;
 }
 
 .service-content .earthserver-init-info .earthserver-info .earthserver-info-title {
-    color: #003e7f;
+    color: #203864;
 }
 
 .service-content .earthserver-init-info .earthserver-info .earthserver-info-description {
@@ -534,7 +556,7 @@ nav.service-navbar .container > .row > .navbar-nav > li:hover > a {
 }
 
 .earthserver-footer > .row:first-child {
-    background-color: #003e7f;
+    background-color: #203864;
 }
 
 .earthserver-footer > .row:last-child {
@@ -567,6 +589,20 @@ nav.service-navbar .container > .row > .navbar-nav > li:hover > a {
     text-align: center;
 }
 
+.earthserver-footer .earthserver-h2020-eu-publicity .publicity-txt {
+    color: rgb(118, 119, 120);
+    text-align:left !important;
+    margin-top:2em;
+}
+
+.earthserver-footer .earthserver-h2020-eu-publicity .earthserver-rights {
+    color: rgb(118, 119, 120);
+}
+
+.earthserver-footer .earthserver-h2020-eu-publicity .publicity-img {
+    text-align:center;
+}
+
 .service-fixed-carousel .row {
     display: block;
     position: absolute;
@@ -577,22 +613,25 @@ a:focus, a:hover {
     text-decoration: none !important;
 }
 
+.service-read-more a,
+.accordion-service-subject-read-more a,
+.earthserver-info-read-more a {
+    color: #203864;
+}
+
 .service-read-more a:hover,
 .service-read-more a:focus,
 .accordion-service-subject-read-more a:hover,
 .accordion-service-subject-read-more a:focus,
 .earthserver-info-read-more a:hover,
 .earthserver-info-read-more  a:focus {
-    border-bottom: 2px solid #003E7F;
-}
-
-.publicity-txt{
-    text-align:left !important;
-    margin-top:2em;
+    border-bottom: 2px solid #203864;
 }
 
 .panel-heading{
     padding: 5px 20px!important;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 7px;
 }
 
 .earthserver-link a:hover, .earthserver-link a:focus{color:white;}
@@ -615,7 +654,7 @@ a:focus, a:hover {
 
 #go-to-top:hover {
     cursor: pointer;
-    background-color: rgba(0,62,127, 0.9);
+    background-color: #203864;
     transition: background-color 0.15s ease 0s;
 }
 
