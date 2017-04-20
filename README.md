@@ -1,1 +1,1 @@
-# es2-landing-page
+# earthserver2
