@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Service Name | EarthServer.eu</title>
+    <link rel="stylesheet" href="earthserver-template.css"/>
+    <!-- Latest compiled and minified JQuery JavaScript -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+          integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+          crossorigin="anonymous">
+    <!-- Latest compiled and minified Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+            integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body data-spy="scroll" data-target="#service-navbar" data-offset="70">
+<!--<div id="es-logo-wrapper">
+    <a class="" href="http://www.earthserver.eu">
+        <img id="es-logo" src="images/logos/earth_server_logo.png">
+    </a>
+</div>-->
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-header-wrapper">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h5 class="modal-title">Sign in to service</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form class="sign-in-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input class="form-control" id="username" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-default btn-lg sign-in-btn">Sign in</button>
+                </form>
+                <div class="sign-in-options-wrapper">
+                    <a class="sign-in-option" href="#">
+                        I forgot my password
+                    </a>
+                    <a class="sign-in-option" href="#">
+                        Create an account
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav id="service-navbar" class="navbar navbar-default navbar-fixed-top service-navbar">
+    <div class="navbar-shadow"></div>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#service-navbar-collapse-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.earthserver.eu">
+                <img id="es-logo" src="images/logos/earth_server_logo.png">
+            </a>
+            <!--<a class="navbar-brand" href="#">
+                <img alt="Logo" src="images/logos/logo_dummy_1.jpg">
+            </a>-->
+        </div>
+        <div class="collapse navbar-collapse" id="service-navbar-collapse-menu">
+            <ul class="visible-xs nav navbar-nav navbar-right internal-links">
+                <li><a href="#service-info">Service</a></li>
+                <li><a href="#service-partners">Partners</a></li>
+                <li><a href="#service-subject1">Subject 1</a></li>
+                <li><a href="#service-subject2">Subject 2</a></li>
+                <li><a href="#service-subject3">Subject 3</a></li>
+                <li><a href="#earthserver-init">EarthServer</a></li>
+                <!--<li role="separator" class="visible-xs divider"></li>-->
+            </ul>
+            <div role="separator" class="visible-xs divider"></div>
+            <ul class="nav navbar-nav navbar-right menu-items">
+                <li><a href="#">Menu Item</a></li>
+                <li><a href="#">Menu Item</a></li>
+                <li><a href="#">Menu Item</a></li>
+                <li><a href="#">Menu Item</a></li>
+                <li><a href="#">Menu Item</a></li>
+                <li id="vertical-line-li" class="hidden-xs"><a class="vertical-line"><span>|</span></a></li>
+                <li role="separator" class="visible-xs divider"></li>
+                <li><a id="sign-in-li" class="sign-in" data-toggle="modal" href="#sign-in-modal">Sign in</a></li>
+            </ul>
+
+
+        </div>
+        <div id="service-navbar-collapse-anchor">
+            <ul class="hidden-xs nav navbar-nav navbar-right internal-links">
+                <li><a href="#service-info">Service</a></li>
+                <li><a href="#service-partners">Partners</a></li>
+                <li><a href="#service-subject1">Subject 1</a></li>
+                <li><a href="#service-subject2">Subject 2</a></li>
+                <li><a href="#service-subject3">Subject 3</a></li>
+                <li><a href="#earthserver-init">EarthServer</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container service-content">
+    <div class="row service-logo-wrapper">
+        <div class="col-xs-12">
+            <a class="" href="">
+                <img id="service-logo" src="images/logos/logo_dummy_1.jpg">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 carousel">
+            <div id="service-carousel" class="carousel slide service-carousel"><!--data-ride="carousel"-->
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#service-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#service-carousel" data-slide-to="1"></li>
+                    <li data-target="#service-carousel" data-slide-to="2"></li>
+                    <li data-target="#service-carousel" data-slide-to="3"></li>
+                    <li data-target="#service-carousel" data-slide-to="4"></li>
+                    <li data-target="#service-carousel" data-slide-to="5"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div class="carousel-bg-image" style="background-image: url('images/slider_images/airborne_(LQ).jpg')"></div>
+                    </div>
+                    <div class="item">
+                        <div class="carousel-bg-image" style="background-image: url('images/slider_images/atmospheric_(LQ).jpg')"></div>
+                    </div>
+                    <div class="item">
+                        <div class="carousel-bg-image" style="background-image: url('images/slider_images/cryo_(LQ).jpg')"></div>
+                    </div>
+                    <div class="item">
+                        <div class="carousel-bg-image" style="background-image: url('images/slider_images/geology_(LQ).jpg')"></div>
+                    </div>
+                    <div class="item">
+                        <div class="carousel-bg-image" style="background-image: url('images/slider_images/image3_(LQ).jpg')"></div>
+                    </div>
+                    <div class="item">
+                        <div class="carousel-bg-image" style="background-image: url('images/slider_images/show-case-1_(LQ).jpg')"></div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 service-fixed-carousel">
+                    <div class="row">
+                        <div class="col-xs-12 enter-service-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+
+                        <btn class="btn enter-service-btn">
+                            <a href="#">
+                                Enter the service<span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </btn>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="service-social-media" class="row">
+        <div class="col-xs-12 service-social-media-btns">
+            <a href="#">
+                <i class="fa fa-github fa-lg"></i>
+            </a>
+            <a href="https://twitter.com/earthserver_eu">
+                <i class="fa fa-twitter fa-lg"></i>
+            </a>
+            <a href="https://www.linkedin.com/grps/EarthServer-Initiative-8326343/about?">
+                <i class="fa fa-linkedin fa-lg"></i>
+            </a>
+            <a href="https://www.facebook.com/EarthServer-915824361774294/">
+                <i class="fa fa-facebook fa-lg"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-google-plus fa-lg"></i>
+            </a>
+
+        </div>
+    </div>
+    <div id="service-info" class="row">
+        <div class="col-xs-10 col-xs-offset-1 service-info">
+            <div class="row">
+                <div class="col-xs-12 service-name">
+                    <h2>
+                        Name of the service
+                    </h2>
+                </div>
+                <div class="col-xs-12 service-moto">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id mauris ac ante commodo facilisis.
+                </div>
+                <div class="col-xs-12 service-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id mauris ac ante commodo facilisis.
+                    Praesent erat elit, gravida in lacinia et, congue at justo. Morbi at urna venenatis, faucibus nunc
+                    quis, sodales metus. In dictum, metus ut dignissim aliquam, justo mauris vehicula massa, sed tempus
+                    ipsum urna et magna. Aenean pellentesque eros quis odio sagittis bibendum. Pellentesque habitant
+                    morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed egestas posuere iaculis.
+                    Morbi tellus ex, convallis vitae dui nec, varius ultricies erat. Nullam fringilla velit leo, ac
+                    egestas turpis sodales et.
+                </div>
+                <div class="col-xs-12 service-read-more">
+                    <a href="#">
+                        read more
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="service-partners" class="row">
+        <div class="col-xs-12 service-partners-logos">
+            <a href="#">
+                <img src="images/logos2/logo_dummy_3.jpg">
+            </a>
+            <a href="#">
+                <img src="images/logos2/logo_dummy_4.jpg">
+            </a>
+            <a href="#">
+                <img src="images/logos2/logo_dummy_5.jpg">
+            </a>
+            <a href="#">
+                <img src="images/logos2/logo_dummy_6.jpg">
+            </a>
+        </div>
+    </div>
+    <div id="service-subjects" class="row">
+        <div class="col-xs-12">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div id="service-subject1" class="panel panel-default accordion-subject-panel">
+                    <div class="panel-heading-hover">
+                        <div class="panel-heading" role="tab" id="headingSubject1" role="button" data-toggle="collapse"
+                             data-target="#collapseSubject1" aria-expanded="true"
+                             aria-controls="collapseSubject1">
+                            <div class="panel-title accordion-subject-title">
+                                Subject 1<span class="glyphicon glyphicon-chevron-down"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="collapseSubject1" class="panel-collapse collapse" role="tabpanel"
+                         aria-labelledby="headingSubject1">
+                        <div class="panel-body">
+                            <h4 class="accordion-service-subject-title">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id mauris ac ante
+                                commodo
+                                facilisis.
+                            </h4>
+
+                            <div class="accordion-service-subject-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id mauris ac ante
+                                commodo
+                                facilisis. Praesent erat elit, gravida in lacinia et, congue at justo. Morbi at urna
+                                venenatis,
+                                faucibus nunc quis, sodales metus. In dictum, metus ut dignissim aliquam, justo mauris
+                                vehicula
+                                massa, sed tempus ipsum urna et magna. Aenean pellentesque eros quis odio sagittis
+                                bibendum.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas.
+                                Sed egestas posuere iaculis. Morbi tellus ex, convallis vitae dui nec, varius ultricies
+                                erat.
+                                Nullam fringilla velit leo, ac egestas turpis sodales et.
+                            </div>
+                            <div class="accordion-service-subject-read-more">
+                                <a href="#">
+                                    read more
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="service-subject2" class="panel panel-default accordion-subject-panel">
+                    <div class="panel-heading-hover">
+                        <div class="panel-heading" role="tab" id="headingSubject2" role="button" data-toggle="collapse"
+                             data-target="#collapseSubject2" aria-expanded="true"
+                             aria-controls="collapseSubject2">
+                            <div class="panel-title accordion-subject-title">
+                                Subject 2<span class="glyphicon glyphicon-chevron-down"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="collapseSubject2" class="panel-collapse collapse" role="tabpanel"
+                         aria-labelledby="headingSubject2">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6">
+                                    <img class="img-responsive" src="images/slider_images/image3_(LQ).jpg">
+                                </div>
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <h4 class="accordion-service-subject-title">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id mauris ac ante
+                                                commodo
+                                                facilisis.
+                                            </h4>
+
+                                            <div class="accordion-service-subject-description">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id mauris ac ante
+                                                commodo
+                                                facilisis. Praesent erat elit, gravida in lacinia et, congue at justo. Morbi at urna
+                                                venenatis,
+                                                faucibus nunc quis, sodales metus. In dictum, metus ut dignissim aliquam, justo mauris
+                                                vehicula
+                                                massa, sed tempus ipsum urna et magna. Aenean pellentesque eros quis odio sagittis
+                                                bibendum.
+                                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                                egestas.
+                                                Sed egestas posuere iaculis. Morbi tellus ex, convallis vitae dui nec, varius ultricies
+                                                erat.
+                                                Nullam fringilla velit leo, ac egestas turpis sodales et.
+                                            </div>
+                                            <div class="accordion-service-subject-read-more">
+                                                <a href="#">
+                                                    read more
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="service-subject3" class="panel panel-default accordion-subject-panel">
+                    <div class="panel-heading-hover">
+                        <div class="panel-heading" role="tab" id="headingSubject3" role="button" data-toggle="collapse"
+                             data-target="#collapseSubject3" aria-expanded="true"
+                             aria-controls="collapseSubject3">
+                            <div class="panel-title accordion-subject-title">
+                                Subject 3<span class="glyphicon glyphicon-chevron-down"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="collapseSubject3" class="panel-collapse collapse" role="tabpanel"
+                         aria-labelledby="headingSubject3">
+                        <div class="panel-body">
+                            <h4 class="accordion-service-subject-title">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id mauris ac ante
+                                commodo
+                                facilisis.
+                            </h4>
+
+                            <div class="accordion-service-subject-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id mauris ac ante
+                                commodo
+                                facilisis. Praesent erat elit, gravida in lacinia et, congue at justo. Morbi at urna
+                                venenatis,
+                                faucibus nunc quis, sodales metus. In dictum, metus ut dignissim aliquam, justo mauris
+                                vehicula
+                                massa, sed tempus ipsum urna et magna. Aenean pellentesque eros quis odio sagittis
+                                bibendum.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas.
+                                Sed egestas posuere iaculis. Morbi tellus ex, convallis vitae dui nec, varius ultricies
+                                erat.
+                                Nullam fringilla velit leo, ac egestas turpis sodales et.
+                            </div>
+                            <div class="accordion-service-subject-read-more">
+                                <a href="#">
+                                    read more
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="earthserver-init" class="row">
+        <div class="col-xs-12">
+            <div class="col-xs-12 earthserver-init-info">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 earthserver-info">
+                        <div class="earthserver-info-logo">
+                            <img src="images/original_logo_scaled.png">
+                        </div>
+                        <div class="earthserver-info-title">
+                            <h4>
+                                The Earth Server Initiative
+                            </h4>
+                        </div>
+                        <div class="earthserver-info-description">
+                            <span>
+                                Big Earth Data at your fingertips - this is the vision of EarthServer, an intercontinental initiative for unleashing the potential of Big Data through a disruptive paradigm shift in technology:
+
+-  from isolated silos of data with disparate functionality towards a single, uniform information space;
+-  from a difficult, artificial differentiation between data and metadata access to unified retrieval;
+-   from zillions of files towards few whatever-size datacubes;
+-   from limited functionality to the freedom of asking anything, anytime, any server in a peer network of data centers worldwide.
+                            </span>
+                        </div>
+                        <div class="earthserver-info-read-more">
+                            <a href="http://www.earthserver.eu">
+                                read more
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 earthserver-twitter">
+                        <a class="twitter-timeline" href="https://twitter.com/EarthServer_EU"
+                           data-widget-id="661201917717176320" data-height="300">Tweets by @EarthServer_EU
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="container-fluid earthserver-footer">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 earthserver-links">
+            <div class="col-xs-6 col-sm-3 earthserver-links-block">
+                <div class="earthserver-link">
+                    <a href="#">
+                        orem ipsum dolor
+                    </a>
+                </div>
+                <div class="earthserver-link">
+                    <a href="#">
+                        sit amet consectetur
+                    </a>
+                </div>
+                <div class="earthserver-link">
+                    <a href="#">
+                        adipiscing elit, sed
+                    </a>
+                </div>
+                <div class="earthserver-link">
+                    <a href="#">
+                        do eiusmod tempor
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 earthserver-links-block">
+                <div class="earthserver-link">
+                    <a href="#">
+                        orem ipsum dolor
+                    </a>
+                </div>
+                <div class="earthserver-link">
+                    <a href="#">
+                        sit amet consectetur
+                    </a>
+                </div>
+                <div class="earthserver-link">
+                    <a href="#">
+                        adipiscing elit, sed
+                    </a>
+                </div>
+                <div class="earthserver-link">
+                    <a href="#">
+                        do eiusmod tempor
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 earthserver-links-block">
+                <div class="earthserver-link">
+                    <a href="#">
+                        orem ipsum dolor
+                    </a>
+                </div>
+                <div class="earthserver-link">
+                    <a href="#">
+                        sit amet consectetur
+                    </a>
+                </div>
+                <div class="earthserver-link">
+                    <a href="#">
+                        adipiscing elit, sed
+                    </a>
+                </div>
+                <div class="earthserver-link">
+                    <a href="#">
+                        do eiusmod tempor
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 earthserver-links-block">
+                <div class="earthserver-link">
+                    <a href="#">
+                        orem ipsum dolor
+                    </a>
+                </div>
+                <div class="earthserver-link">
+                    <a href="#">
+                        sit amet consectetur
+                    </a>
+                </div>
+                <div class="earthserver-link">
+                    <a href="#">
+                        adipiscing elit, sed
+                    </a>
+                </div>
+                <div class="earthserver-link">
+                    <a href="#">
+                        do eiusmod tempor
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 earthserver-h2020-eu-publicity">
+            <div class="col-xs-12 col-sm-3 col-sm-offset-1 col-md-2 col-md-offset-2 publicity-img">
+                <img src="images/eu_flag.png">
+            </div>
+            <div class="col-xs-12 col-sm-7 col-md-6 publicity-txt">
+                This project is receiving funding from the European Union’s Horizon
+                2020 research and innovation programme under grant agreement No
+                654367
+            </div>
+            <div class="row">
+                <div class="col-xs-12 earthserver-rights">
+                    2004 - 2015 © MEEO S.R.L. All rights reserved. Registered office: Via Giuseppe Saragat, 9 -
+                    44122, Ferrara (FE), ITALY - VAT: IT01629630383 Phone: +39 0532 1861501 - Fax: +39 0532 1861637
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<div id="go-to-top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+</div>
+<script>
+    !function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + "://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+    }(document, "script", "twitter-wjs");
+
+    $(function () {
+        $(".panel-collapse")
+                .on("show.bs.collapse", function (e) {
+                    $(e.target).prev(".panel-heading-hover").find(".accordion-subject-title").children("span")
+                            .removeClass("glyphicon-chevron-down")
+                            .addClass("glyphicon-chevron-up");
+                }).on("hide.bs.collapse", function (e) {
+            $(e.target).prev(".panel-heading-hover").find(".accordion-subject-title").children("span")
+                    .removeClass("glyphicon-chevron-up")
+                    .addClass("glyphicon-chevron-down");
+        });
+        $(".panel-heading").click(function() {});
+        $("#go-to-top").click(function() {
+            $("html, body").animate({ scrollTop: "0px" });
+        });
+        $(window).scroll(function() {
+            if($(this).scrollTop() > $(this).height()/2) {
+                $("#go-to-top").addClass("not-top");
+            } else {
+                $("#go-to-top").removeClass("not-top");
+            }
+        }).ready(function(e) {
+            if(location.hash != undefined) {
+                $(location.hash).find("div[data-toggle='collapse']").click();
+            }
+            var top = $("#service-navbar").children(".container").find(".menu-items");
+            var width = $("#service-navbar-collapse-anchor").children(".internal-links").width() +$("#vertical-line-li").width()*2 + $("#sign-in-li").width() + 10;
+
+            $("#service-navbar-collapse-anchor").css({left: top.position().left + top.width() - width});
+        });
+
+        $("#service-navbar").find(".navbar-nav").find("a").click(function(e) {
+            var elem = $($(this).attr("href"));
+            if(!elem.find(".collapse").hasClass("in")) {
+                elem.find("div[data-toggle='collapse']").click();
+            }
+        });
+    });
+
+    $(window).resize(function() {
+        var top = $("#service-navbar").children(".container").find(".menu-items");
+        var width = $("#service-navbar-collapse-anchor").children(".internal-links").width() +$("#vertical-line-li").width()*2 + $("#sign-in-li").width() + 10;
+
+        $("#service-navbar-collapse-anchor").css({left: top.position().left + top.width() - width});
+    });
+</script>
+</body>
+</html>
